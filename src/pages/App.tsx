@@ -1,16 +1,16 @@
-import React, {  Component } from 'react'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
 import { Routes } from './Routes'
+import { ErrorBoundary  } from './ErrorBoundary '
 
-export class App extends Component {
+import { theme, GlobalStyle } from '../styles'
 
-  componentDidCatch() {
-    return <div />
-  }
-
-  render() {
-    return (
+export const App = () => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <ErrorBoundary>
       <Routes />
-    )
-  }
-}
+    </ErrorBoundary>
+  </ThemeProvider>
+)
