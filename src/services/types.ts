@@ -1,7 +1,7 @@
 type TAttr = 'agi' | 'str' | 'int'
 type TAttackType = 'Ranged' | 'Melee'
 
-interface IHero {
+export interface IHero {
   id: number
   name: string
   localized_name: string
