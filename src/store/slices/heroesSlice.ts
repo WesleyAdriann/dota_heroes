@@ -2,9 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { IHero } from '../../services/types'
 
+export interface IHeroState extends IHero {
+  img: string
+}
+
 export interface heroesState {
-  heroes: IHero[]
-  selectedHero: IHero | null
+  heroes: IHeroState[]
+  selectedHero: IHeroState | null
 }
 
 const initialState: heroesState = {
@@ -16,10 +20,10 @@ export const heroesSlice = createSlice({
   name: 'heroes',
   initialState,
   reducers: {
-    setHeroes: (state, action: PayloadAction<IHero[]>) => {
+    setHeroes: (state, action: PayloadAction<IHeroState[]>) => {
       state.heroes = action.payload
     },
-    setSelectedHero: (state, action: PayloadAction<IHero>) => {
+    setSelectedHero: (state, action: PayloadAction<IHeroState>) => {
       state.selectedHero = action.payload
     }
   },

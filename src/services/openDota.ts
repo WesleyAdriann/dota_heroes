@@ -8,7 +8,6 @@ const api = axios.create({
   baseURL: apiRoutes.openDota.baseUrl
 })
 
-export const getHeroStats = (): AxiosPromise<types.IGetHeroesResponse> => {
-  return api.get(apiRoutes.openDota.heroStats)
+export const getHeros = (): AxiosPromise<types.IGetHeroesResponse> => {
+  return api.get(apiRoutes.openDota.heroes)
 }
-

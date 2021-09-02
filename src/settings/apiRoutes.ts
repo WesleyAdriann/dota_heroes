@@ -1,6 +1,7 @@
 export const apiRoutes = {
   openDota: {
     baseUrl: 'https://api.opendota.com/api',
-    heroStats: '/heroStats'
+    heroStats: '/heroStats',
+    heroes: '/heroes'
   }
 }
