@@ -7,7 +7,7 @@ import { setHeroes, setSelectedHero, IHeroState } from '../../store/slices/heroe
 import { getHeros } from '../../services/openDota'
 
 
-import { Header, Title, Content, HeroWrapper, HeroImage } from './styles'
+import { Header, Title, Content, HeroWrapper, HeroText, HeroImage, HeroPrimaryAttr } from './styles'
 
 export const Home = () => {
   const dispatch = useAppDispatch()
@@ -46,6 +46,8 @@ export const Home = () => {
         {
           heroes.map((hero) => (
             <HeroWrapper key={hero.name} onClick={() => onClickHero(hero)}>
+              <HeroPrimaryAttr heroAttr={hero.primary_attr} alt={hero.name} />
+              <HeroText>{hero.localized_name}</HeroText>
               <HeroImage heroImg={hero.img} alt={hero.name} />
             </HeroWrapper>
           ))

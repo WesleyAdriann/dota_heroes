@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: black;
+  background-color: #13120e;
   min-height: 100vh;
+  padding-bottom: 24px;
   width: 100%;
 `
 

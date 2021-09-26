@@ -4,7 +4,7 @@ import RobotoRegular from '../assets/fonts/Roboto-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Roboto';
+    font-family: ${(props) => props.theme.fontFamily};
     src: url(${RobotoRegular});
   }
   * {

@@ -1,4 +1,4 @@
-type TAttr = 'agi' | 'str' | 'int'
+export type TAttr = 'agi' | 'str' | 'int'
 type TAttackType = 'Ranged' | 'Melee'
 
 export interface IHero {
