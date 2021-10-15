@@ -1,15 +1,19 @@
 import React, { useEffect, useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { Page } from '../../components/Page'
+import { Header } from '../../components/Header'
 import { useAppSelector, useAppDispatch } from '../../store'
 import { setHeroes, setSelectedHero, IHeroState } from '../../store/slices/heroesSlice'
 
 import { getHeros } from '../../services/openDota'
 
 
-import { Header, Title, Content, HeroWrapper, HeroText, HeroImage, HeroPrimaryAttr } from './styles'
+import { Content, HeroWrapper, HeroText, HeroImage, HeroPrimaryAttr } from './styles'
 
-export const Home = () => {
+
+export const Home: React.FC = (props) => {
+  const history = useHistory()
   const dispatch = useAppDispatch()
   const heroes = useAppSelector((state) => state.heroesReducer.heroes)
 
@@ -29,8 +33,9 @@ export const Home = () => {
 
 
   const onClickHero = (hero: IHeroState) => {
-    console.log(hero.name, ' selected')
+    console.log(hero)
     dispatch(setSelectedHero(hero))
+    history.push(`/${hero.name}`)
   }
 
   useEffect(() => {
@@ -39,9 +44,7 @@ export const Home = () => {
 
   return (
     <Page>
-      <Header>
-        <Title>Heroes</Title>
-      </Header>
+      <Header>Heroes</Header>
       <Content>
         {
           heroes.map((hero) => (

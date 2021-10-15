@@ -4,14 +4,7 @@ import { EHeroPrimaryAttr } from '../../utils'
 
 import { IHeroImage, IHeroPrimaryAttr } from './types'
 
-export  const Header = styled.header`
-  padding: 24px 0;
-`
 
-export const Title = styled.p`
-  color: ${({ theme }) => theme.fontWhite};
-  font-size: 46px;
-`
 export const Content = styled.section`
   display: flex;
   justify-content: center;
